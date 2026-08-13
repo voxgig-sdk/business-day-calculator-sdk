@@ -60,16 +60,16 @@ def ssl_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "BUSINESSDAYCALCULATOR_TEST_SSL_ENTID" => {},
-    "BUSINESSDAYCALCULATOR_TEST_LIVE" => "FALSE",
-    "BUSINESSDAYCALCULATOR_APIKEY" => "NONE",
+    "BUSINESS_DAY_CALCULATOR_TEST_SSL_ENTID" => {},
+    "BUSINESS_DAY_CALCULATOR_TEST_LIVE" => "FALSE",
+    "BUSINESS_DAY_CALCULATOR_APIKEY" => "NONE",
   })
 
-  live = env["BUSINESSDAYCALCULATOR_TEST_LIVE"] == "TRUE"
+  live = env["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["BUSINESSDAYCALCULATOR_APIKEY"],
+      "apikey" => env["BUSINESS_DAY_CALCULATOR_APIKEY"],
     }
     client = BusinessDayCalculatorSDK.new(merged_opts)
     return {

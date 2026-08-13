@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BusinessDayCalculatorControl
-from core.error import BusinessDayCalculatorError
-from core.result import BusinessDayCalculatorResult
-from core.spec import BusinessDayCalculatorSpec
+from businessdaycalculator_sdk.config import make_config
+from businessdaycalculator_sdk.features import _make_feature
+from businessdaycalculator_sdk.core.control import BusinessDayCalculatorControl
+from businessdaycalculator_sdk.core.error import BusinessDayCalculatorError
+from businessdaycalculator_sdk.core.result import BusinessDayCalculatorResult
+from businessdaycalculator_sdk.core.spec import BusinessDayCalculatorSpec
 
 
 # True when this SDK was generated with the named feature.

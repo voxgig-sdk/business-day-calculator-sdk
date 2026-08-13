@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# BusinessDayCalculator SDK exists test
 
 import pytest
 from businessdaycalculator_sdk import BusinessDayCalculatorSDK

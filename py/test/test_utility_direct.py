@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from businessdaycalculator_sdk.utility.voxgig_struct import voxgig_struct as vs
 from businessdaycalculator_sdk import BusinessDayCalculatorSDK
-from core import helpers
+from businessdaycalculator_sdk.core import helpers
 from test import runner
 
 
@@ -61,16 +61,16 @@ def _utility_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "BUSINESSDAYCALCULATOR_TEST_UTILITY_ENTID": {},
-        "BUSINESSDAYCALCULATOR_TEST_LIVE": "FALSE",
-        "BUSINESSDAYCALCULATOR_APIKEY": "NONE",
+        "BUSINESS_DAY_CALCULATOR_TEST_UTILITY_ENTID": {},
+        "BUSINESS_DAY_CALCULATOR_TEST_LIVE": "FALSE",
+        "BUSINESS_DAY_CALCULATOR_APIKEY": "NONE",
     })
 
-    live = env.get("BUSINESSDAYCALCULATOR_TEST_LIVE") == "TRUE"
+    live = env.get("BUSINESS_DAY_CALCULATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("BUSINESSDAYCALCULATOR_APIKEY"),
+            "apikey": env.get("BUSINESS_DAY_CALCULATOR_APIKEY"),
         }
         client = BusinessDayCalculatorSDK(merged_opts)
         return {

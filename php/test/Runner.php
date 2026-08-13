@@ -43,8 +43,8 @@ class BusinessDayCalculatorTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('BUSINESSDAYCALCULATOR_TEST_LIVE');
-        $override = self::getenv('BUSINESSDAYCALCULATOR_TEST_OVERRIDE');
+        $live = self::getenv('BUSINESS_DAY_CALCULATOR_TEST_LIVE');
+        $override = self::getenv('BUSINESS_DAY_CALCULATOR_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class BusinessDayCalculatorTestRunner
             }
         }
 
-        $explain = self::getenv('BUSINESSDAYCALCULATOR_TEST_EXPLAIN');
+        $explain = self::getenv('BUSINESS_DAY_CALCULATOR_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['BUSINESSDAYCALCULATOR_TEST_EXPLAIN'] = $explain;
+            $m['BUSINESS_DAY_CALCULATOR_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

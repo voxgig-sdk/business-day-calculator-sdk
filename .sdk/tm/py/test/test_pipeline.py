@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import BusinessDayCalculatorSDK
-from core.error import BusinessDayCalculatorError
-from core.result import BusinessDayCalculatorResult
-from core.response import BusinessDayCalculatorResponse
-from core.spec import BusinessDayCalculatorSpec
-from feature.base_feature import BusinessDayCalculatorBaseFeature
+from projectname_sdk.core.error import BusinessDayCalculatorError
+from projectname_sdk.core.result import BusinessDayCalculatorResult
+from projectname_sdk.core.response import BusinessDayCalculatorResponse
+from projectname_sdk.core.spec import BusinessDayCalculatorSpec
+from projectname_sdk.feature.base_feature import BusinessDayCalculatorBaseFeature
 
 
 def _client():

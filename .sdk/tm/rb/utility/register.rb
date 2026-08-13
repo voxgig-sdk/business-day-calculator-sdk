@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ BusinessDayCalculatorUtility.registrar = ->(u) {
   u.prepare_params = BusinessDayCalculatorUtilities::PrepareParams
   u.prepare_path = BusinessDayCalculatorUtilities::PreparePath
   u.prepare_query = BusinessDayCalculatorUtilities::PrepareQuery
+  u.graphql_body = BusinessDayCalculatorUtilities::GraphqlBody
+  u.graphql_errors = BusinessDayCalculatorUtilities::GraphqlErrors
   u.result_basic = BusinessDayCalculatorUtilities::ResultBasic
   u.result_body = BusinessDayCalculatorUtilities::ResultBody
   u.result_headers = BusinessDayCalculatorUtilities::ResultHeaders

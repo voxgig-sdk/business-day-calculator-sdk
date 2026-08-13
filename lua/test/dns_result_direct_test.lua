@@ -66,16 +66,16 @@ function dns_result_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["BUSINESSDAYCALCULATOR_TEST_DNS_RESULT_ENTID"] = {},
-    ["BUSINESSDAYCALCULATOR_TEST_LIVE"] = "FALSE",
-    ["BUSINESSDAYCALCULATOR_APIKEY"] = "NONE",
+    ["BUSINESS_DAY_CALCULATOR_TEST_DNS_RESULT_ENTID"] = {},
+    ["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] = "FALSE",
+    ["BUSINESS_DAY_CALCULATOR_APIKEY"] = "NONE",
   })
 
-  local live = env["BUSINESSDAYCALCULATOR_TEST_LIVE"] == "TRUE"
+  local live = env["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["BUSINESSDAYCALCULATOR_APIKEY"],
+      apikey = env["BUSINESS_DAY_CALCULATOR_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

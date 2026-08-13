@@ -71,16 +71,16 @@ function email_validate_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BUSINESSDAYCALCULATOR_TEST_EMAIL_VALIDATE_ENTID" => [],
-        "BUSINESSDAYCALCULATOR_TEST_LIVE" => "FALSE",
-        "BUSINESSDAYCALCULATOR_APIKEY" => "NONE",
+        "BUSINESS_DAY_CALCULATOR_TEST_EMAIL_VALIDATE_ENTID" => [],
+        "BUSINESS_DAY_CALCULATOR_TEST_LIVE" => "FALSE",
+        "BUSINESS_DAY_CALCULATOR_APIKEY" => "NONE",
     ]);
 
-    $live = $env["BUSINESSDAYCALCULATOR_TEST_LIVE"] === "TRUE";
+    $live = $env["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["BUSINESSDAYCALCULATOR_APIKEY"],
+            "apikey" => $env["BUSINESS_DAY_CALCULATOR_APIKEY"],
         ];
         $client = new BusinessDayCalculatorSDK($merged_opts);
         return [

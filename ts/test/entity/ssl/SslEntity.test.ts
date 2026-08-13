@@ -26,8 +26,8 @@ import {
 describe('SslEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BUSINESSDAYCALCULATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BUSINESSDAYCALCULATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BUSINESS_DAY_CALCULATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BUSINESS_DAY_CALCULATOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BusinessDayCalculatorSDK.test()
@@ -63,7 +63,7 @@ describe('SslEntity', async () => {
     const ssl_ref01_ent = client.Ssl()
     const ssl_ref01_match: any = {}
 
-    const ssl_ref01_list = await ssl_ref01_ent.list(ssl_ref01_match)
+    const ssl_ref01_list = (await ssl_ref01_ent.list(ssl_ref01_match)).map((e: any) => e.data())
 
 
   })

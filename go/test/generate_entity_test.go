@@ -44,7 +44,7 @@ func TestGenerateEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set BUSINESSDAYCALCULATOR_TEST_GENERATE_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set BUSINESS_DAY_CALCULATOR_TEST_GENERATE_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -110,38 +110,38 @@ func generateBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("BUSINESSDAYCALCULATOR_TEST_GENERATE_ENTID")
+	entidEnvRaw := os.Getenv("BUSINESS_DAY_CALCULATOR_TEST_GENERATE_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"BUSINESSDAYCALCULATOR_TEST_GENERATE_ENTID": idmap,
-		"BUSINESSDAYCALCULATOR_TEST_LIVE":      "FALSE",
-		"BUSINESSDAYCALCULATOR_TEST_EXPLAIN":   "FALSE",
-		"BUSINESSDAYCALCULATOR_APIKEY":         "NONE",
+		"BUSINESS_DAY_CALCULATOR_TEST_GENERATE_ENTID": idmap,
+		"BUSINESS_DAY_CALCULATOR_TEST_LIVE":      "FALSE",
+		"BUSINESS_DAY_CALCULATOR_TEST_EXPLAIN":   "FALSE",
+		"BUSINESS_DAY_CALCULATOR_APIKEY":         "NONE",
 	})
 
-	idmapResolved := core.ToMapAny(env["BUSINESSDAYCALCULATOR_TEST_GENERATE_ENTID"])
+	idmapResolved := core.ToMapAny(env["BUSINESS_DAY_CALCULATOR_TEST_GENERATE_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["BUSINESSDAYCALCULATOR_TEST_LIVE"] == "TRUE" {
+	if env["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["BUSINESSDAYCALCULATOR_APIKEY"],
+				"apikey": env["BUSINESS_DAY_CALCULATOR_APIKEY"],
 			},
 			extra,
 		})
 		client = sdk.NewBusinessDayCalculatorSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["BUSINESSDAYCALCULATOR_TEST_LIVE"] == "TRUE"
+	live := env["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["BUSINESSDAYCALCULATOR_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["BUSINESS_DAY_CALCULATOR_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),
