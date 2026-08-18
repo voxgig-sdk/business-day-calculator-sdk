@@ -28,7 +28,7 @@ class BusinessDayCalculatorSDK
     utility = BusinessDayCalculatorUtility.new
     @_utility = utility
 
-    config = BusinessDayCalculatorConfig.make_config
+    config = BusinessDayCalculatorConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

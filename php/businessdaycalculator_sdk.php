@@ -40,7 +40,7 @@ class BusinessDayCalculatorSDK
         $utility = new BusinessDayCalculatorUtility();
         $this->_utility = $utility;
 
-        $config = BusinessDayCalculatorConfig::make_config();
+        $config = BusinessDayCalculatorConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
