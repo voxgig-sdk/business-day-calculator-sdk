@@ -68,15 +68,17 @@ function ssl_direct_setup($mockres)
     $env = Runner::env_override([
         "BUSINESS_DAY_CALCULATOR_TEST_SSL_ENTID" => [],
         "BUSINESS_DAY_CALCULATOR_TEST_LIVE" => "FALSE",
-        "BUSINESS_DAY_CALCULATOR_APIKEY" => "NONE",
+        "BUSINESS_DAY_CALCULATOR_APIKEY" => "",
     ]);
 
     $live = $env["BUSINESS_DAY_CALCULATOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
-        $merged_opts = [
+        // Merged so the generated fields win: sdk-test-control.json's
+        // test.client.options adds to the live client, it does not redirect it.
+        $merged_opts = array_merge(Runner::live_client_options(), [
             "apikey" => $env["BUSINESS_DAY_CALCULATOR_APIKEY"],
-        ];
+        ]);
         $client = new BusinessDayCalculatorSDK($merged_opts);
         return [
             "client" => $client,

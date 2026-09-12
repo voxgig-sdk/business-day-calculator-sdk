@@ -60,15 +60,18 @@ def _domain_direct_setup(mockres):
     env = runner.env_override({
         "BUSINESS_DAY_CALCULATOR_TEST_DOMAIN_ENTID": {},
         "BUSINESS_DAY_CALCULATOR_TEST_LIVE": "FALSE",
-        "BUSINESS_DAY_CALCULATOR_APIKEY": "NONE",
+        "BUSINESS_DAY_CALCULATOR_APIKEY": "",
     })
 
     live = env.get("BUSINESS_DAY_CALCULATOR_TEST_LIVE") == "TRUE"
 
     if live:
-        merged_opts = {
+        # sdk-test-control.json's test.client.options seeds the live
+        # client; the generated fields below overwrite anything they name.
+        merged_opts = dict(runner.live_client_options())
+        merged_opts.update({
             "apikey": env.get("BUSINESS_DAY_CALCULATOR_APIKEY"),
-        }
+        })
         client = BusinessDayCalculatorSDK(merged_opts)
         return {
             "client": client,

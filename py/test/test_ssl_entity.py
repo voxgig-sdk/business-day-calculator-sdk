@@ -125,7 +125,7 @@ def _ssl_basic_setup(extra):
         "BUSINESS_DAY_CALCULATOR_TEST_SSL_ENTID": idmap,
         "BUSINESS_DAY_CALCULATOR_TEST_LIVE": "FALSE",
         "BUSINESS_DAY_CALCULATOR_TEST_EXPLAIN": "FALSE",
-        "BUSINESS_DAY_CALCULATOR_APIKEY": "NONE",
+        "BUSINESS_DAY_CALCULATOR_APIKEY": "",
     })
 
     idmap_resolved = helpers.to_map(
@@ -135,6 +135,10 @@ def _ssl_basic_setup(extra):
 
     if env.get("BUSINESS_DAY_CALCULATOR_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
+            # FIRST, so the generated fields below win: sdk-test-control.json's
+            # test.client.options adds to the live client, it does not
+            # redirect it.
+            runner.live_client_options(),
             {
                 "apikey": env.get("BUSINESS_DAY_CALCULATOR_APIKEY"),
             },
