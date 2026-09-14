@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { BusinessDayCalculatorSDK } from '@voxgig-sdk/business-day-calculator'
+import { BusinessDayCalculatorSDK } from '@voxgig-sdk/business-day-calculator-sdk'
 
 const client = new BusinessDayCalculatorSDK({
   apikey: process.env.BUSINESS_DAY_CALCULATOR_APIKEY,
@@ -805,7 +805,7 @@ business-day-calculator/
 Import the SDK from the package root:
 
 ```ts
-import { BusinessDayCalculatorSDK } from '@voxgig-sdk/business-day-calculator'
+import { BusinessDayCalculatorSDK } from '@voxgig-sdk/business-day-calculator-sdk'
 ```
 
 ### Entity state

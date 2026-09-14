@@ -105,7 +105,7 @@ local result, err = client:Utility():load({ input = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
 | Python | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
 | PHP | `voxgig-sdk/business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/business-day-calculator-sdk/go` | `go get github.com/voxgig-sdk/business-day-calculator-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Utility():load({ input = "example" })
 ### TypeScript
 
 ```ts
-import { BusinessDayCalculatorSDK } from '@voxgig-sdk/business-day-calculator'
+import { BusinessDayCalculatorSDK } from '@voxgig-sdk/business-day-calculator-sdk'
 
 const client = new BusinessDayCalculatorSDK({
   apikey: process.env.BUSINESS_DAY_CALCULATOR_APIKEY,
