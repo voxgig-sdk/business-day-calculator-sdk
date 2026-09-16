@@ -4,7 +4,10 @@ declare(strict_types=1);
 // BusinessDayCalculator SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class BusinessDayCalculatorFeatures
@@ -14,8 +17,14 @@ class BusinessDayCalculatorFeatures
         switch ($name) {
             case "base":
                 return new BusinessDayCalculatorBaseFeature();
+            case "ratelimit":
+                return new BusinessDayCalculatorRatelimitFeature();
+            case "retry":
+                return new BusinessDayCalculatorRetryFeature();
             case "test":
                 return new BusinessDayCalculatorTestFeature();
+            case "timeout":
+                return new BusinessDayCalculatorTimeoutFeature();
             default:
                 return new BusinessDayCalculatorBaseFeature();
         }
@@ -31,7 +40,10 @@ class BusinessDayCalculatorFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
