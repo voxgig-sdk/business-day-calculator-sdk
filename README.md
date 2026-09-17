@@ -105,12 +105,12 @@ local result, err = client:Utility():load({ input = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
-| Python | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
-| PHP | `voxgig-sdk/business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| Python | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| PHP | `voxgig-sdk/business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/business-day-calculator-sdk/go` | `go get github.com/voxgig-sdk/business-day-calculator-sdk/go@latest` |
-| Ruby | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
-| Lua | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/releases) |
+| Ruby | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| Lua | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/business-day-calculator-sdk/go-cli` | `go install github.com/voxgig-sdk/business-day-calculator-sdk/go-cli/cmd/business-day-calculator@latest` |
 | Go MCP server | `github.com/voxgig-sdk/business-day-calculator-sdk/go-mcp` | `go get github.com/voxgig-sdk/business-day-calculator-sdk/go-mcp@latest` |
 
