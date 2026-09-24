@@ -19,7 +19,6 @@ import type {
   WhoiListMatch,
 } from '../BusinessDayCalculatorTypes'
 
-// TODO: needs Entity superclass
 class WhoiEntity extends BusinessDayCalculatorEntityBase<Whoi> {
 
   constructor(client: BusinessDayCalculatorSDK, entopts: any) {

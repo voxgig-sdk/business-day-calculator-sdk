@@ -19,7 +19,6 @@ import type {
   DomainListMatch,
 } from '../BusinessDayCalculatorTypes'
 
-// TODO: needs Entity superclass
 class DomainEntity extends BusinessDayCalculatorEntityBase<Domain> {
 
   constructor(client: BusinessDayCalculatorSDK, entopts: any) {

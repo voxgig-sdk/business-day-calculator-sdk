@@ -19,7 +19,6 @@ import type {
   SslListMatch,
 } from '../BusinessDayCalculatorTypes'
 
-// TODO: needs Entity superclass
 class SslEntity extends BusinessDayCalculatorEntityBase<Ssl> {
 
   constructor(client: BusinessDayCalculatorSDK, entopts: any) {

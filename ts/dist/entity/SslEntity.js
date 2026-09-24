@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SslEntity = void 0;
 const BusinessDayCalculatorEntityBase_1 = require("../BusinessDayCalculatorEntityBase");
-// TODO: needs Entity superclass
 class SslEntity extends BusinessDayCalculatorEntityBase_1.BusinessDayCalculatorEntityBase {
     constructor(client, entopts) {
         super(client, entopts);
