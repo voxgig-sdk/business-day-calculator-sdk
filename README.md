@@ -106,11 +106,11 @@ local result, err = client:Utility():load({ input = "example" })
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
-| Python | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
-| PHP | `voxgig-sdk/business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| Python | `voxgig-sdk-business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| PHP | `voxgig-sdk/business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/business-day-calculator-sdk/go` | `go get github.com/voxgig-sdk/business-day-calculator-sdk/go@latest` |
-| Ruby | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
-| Lua | `voxgig-sdk-business-day-calculator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| Ruby | `voxgig-sdk-business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
+| Lua | `voxgig-sdk-business-day-calculator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/business-day-calculator-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/business-day-calculator-sdk/go-cli` | `go install github.com/voxgig-sdk/business-day-calculator-sdk/go-cli/cmd/business-day-calculator@latest` |
 | Go MCP server | `github.com/voxgig-sdk/business-day-calculator-sdk/go-mcp` | `go get github.com/voxgig-sdk/business-day-calculator-sdk/go-mcp@latest` |
 
@@ -362,10 +362,10 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 
